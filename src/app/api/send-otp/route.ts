@@ -23,6 +23,8 @@ export async function POST(req: NextRequest) {
     const otp = Math.floor(100000 + Math.random() * 900000).toString()
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString()
     const fullPhone = `91${phone}`
+    // TEST MODE - console mein OTP dikhega
+console.log(`TEST OTP for ${phone}: ${otp}`)
 
     // Delete old OTPs for this phone
     await supabase
